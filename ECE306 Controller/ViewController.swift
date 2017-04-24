@@ -31,15 +31,15 @@ class ViewController: UIViewController {
     }
 
     @IBAction func RightButton(_ sender: Any) {
-        Alamofire.request("http://" + ipAddress + "/" + "output.cgi?text=.1212R9&submit=Submit")
+        Alamofire.request("http://" + ipAddress + "/" + "output.cgi?text=.1212L1&submit=Submit")
     }
     
     @IBAction func LeftButton(_ sender: Any) {
-        Alamofire.request("http://" + ipAddress + "/" + "output.cgi?text=.1212L9&submit=Submit")
+        Alamofire.request("http://" + ipAddress + "/" + "output.cgi?text=.1212R1&submit=Submit")
     }
     
     @IBAction func ReverseButton(_ sender: Any) {
-        Alamofire.request("http://" + ipAddress + "/" + "output.cgi?text=.1212B9&submit=Submit")
+        Alamofire.request("http://" + ipAddress + "/" + "output.cgi?text=.1212B1&submit=Submit")
     }
     
     @IBAction func StopButton(_ sender: Any) {
@@ -50,6 +50,15 @@ class ViewController: UIViewController {
         Alamofire.request("http://" + ipAddress + "/" + "output.cgi?text=.1212C1&submit=Submit")
     }
     
+    @IBAction func ApproachCircleButton(_ sender: Any) {
+        Alamofire.request("http://" + ipAddress + "/" + "output.cgi?text=.1212A1&submit=Submit")
+
+    }
+    
+    @IBAction func CircleFailButton(_ sender: Any) {
+        Alamofire.request("http://" + ipAddress + "/" + "output.cgi?text=.1212Z1&submit=Submit")
+    }
+
     @IBAction func SaveIPButton(_ sender: Any) {
         self.ipAddress = self.IPTextField.text!
     }
