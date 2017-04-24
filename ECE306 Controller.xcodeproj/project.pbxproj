@@ -12,6 +12,7 @@
 		52772D871EAE67F700BAE64A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52772D851EAE67F700BAE64A /* Main.storyboard */; };
 		52772D891EAE67F700BAE64A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52772D881EAE67F700BAE64A /* Assets.xcassets */; };
 		52772D8C1EAE67F700BAE64A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52772D8A1EAE67F700BAE64A /* LaunchScreen.storyboard */; };
+		9B53BA250BB9635C730EB558 /* Pods_ECE306_Controller.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F800666A3E61F1E78A6DBC3 /* Pods_ECE306_Controller.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		52772D881EAE67F700BAE64A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52772D8B1EAE67F700BAE64A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52772D8D1EAE67F700BAE64A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81B13E271D18698BD6A1948C /* Pods-ECE306 Controller.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ECE306 Controller.release.xcconfig"; path = "Pods/Target Support Files/Pods-ECE306 Controller/Pods-ECE306 Controller.release.xcconfig"; sourceTree = "<group>"; };
+		8F800666A3E61F1E78A6DBC3 /* Pods_ECE306_Controller.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ECE306_Controller.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8CBCFF0EE3EDF81FF6BC4AF /* Pods-ECE306 Controller.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ECE306 Controller.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ECE306 Controller/Pods-ECE306 Controller.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B53BA250BB9635C730EB558 /* Pods_ECE306_Controller.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23646D7CB7BBA2F1DC45364E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E8CBCFF0EE3EDF81FF6BC4AF /* Pods-ECE306 Controller.debug.xcconfig */,
+				81B13E271D18698BD6A1948C /* Pods-ECE306 Controller.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		52772D751EAE67F700BAE64A = {
 			isa = PBXGroup;
 			children = (
 				52772D801EAE67F700BAE64A /* ECE306 Controller */,
 				52772D7F1EAE67F700BAE64A /* Products */,
+				23646D7CB7BBA2F1DC45364E /* Pods */,
+				A1D7EF876AA8AEF6677BE794 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +80,14 @@
 			path = "ECE306 Controller";
 			sourceTree = "<group>";
 		};
+		A1D7EF876AA8AEF6677BE794 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8F800666A3E61F1E78A6DBC3 /* Pods_ECE306_Controller.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52772D901EAE67F700BAE64A /* Build configuration list for PBXNativeTarget "ECE306 Controller" */;
 			buildPhases = (
+				11487289AF77ACBE6D3ED473 /* [CP] Check Pods Manifest.lock */,
 				52772D7A1EAE67F700BAE64A /* Sources */,
 				52772D7B1EAE67F700BAE64A /* Frameworks */,
 				52772D7C1EAE67F700BAE64A /* Resources */,
+				80D449E34A97D0BE0B762510 /* [CP] Embed Pods Frameworks */,
+				E3AC80C8D170D0A1D1CCF6BA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		11487289AF77ACBE6D3ED473 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		80D449E34A97D0BE0B762510 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ECE306 Controller/Pods-ECE306 Controller-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3AC80C8D170D0A1D1CCF6BA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ECE306 Controller/Pods-ECE306 Controller-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		52772D7A1EAE67F700BAE64A /* Sources */ = {
@@ -259,10 +334,12 @@
 		};
 		52772D911EAE67F700BAE64A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8CBCFF0EE3EDF81FF6BC4AF /* Pods-ECE306 Controller.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = UQ5A7GXJP2;
 				INFOPLIST_FILE = "ECE306 Controller/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.malatras.ECE306-Controller";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -272,10 +349,12 @@
 		};
 		52772D921EAE67F700BAE64A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81B13E271D18698BD6A1948C /* Pods-ECE306 Controller.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = UQ5A7GXJP2;
 				INFOPLIST_FILE = "ECE306 Controller/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.malatras.ECE306-Controller";
 				PRODUCT_NAME = "$(TARGET_NAME)";

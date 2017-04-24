@@ -1,0 +1,6 @@
+framework module Pods_ECE306_Controller {
+  umbrella header "Pods-ECE306 Controller-umbrella.h"
+
+  export *
+  module * { export * }
+}
