@@ -63,9 +63,7 @@ class ViewController: UIViewController {
         self.ipAddress = self.IPTextField.text!
     }
     
-    //Calls this function when the tap is recognized.
     func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
 }
