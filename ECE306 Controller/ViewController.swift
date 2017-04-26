@@ -27,36 +27,36 @@ class ViewController: UIViewController {
     }
 
     @IBAction func ForwardButton(_ sender: Any) {
-        Alamofire.request("http://" + ipAddress + "/" + "output.cgi?text=.1212F1&submit=Submit")
+        requestCar(command: "F", time: 1)
     }
 
     @IBAction func RightButton(_ sender: Any) {
-        Alamofire.request("http://" + ipAddress + "/" + "output.cgi?text=.1212L1&submit=Submit")
+        requestCar(command: "L", time: 1)
     }
     
     @IBAction func LeftButton(_ sender: Any) {
-        Alamofire.request("http://" + ipAddress + "/" + "output.cgi?text=.1212R1&submit=Submit")
+        requestCar(command: "R", time: 1)
     }
     
     @IBAction func ReverseButton(_ sender: Any) {
-        Alamofire.request("http://" + ipAddress + "/" + "output.cgi?text=.1212B1&submit=Submit")
+        requestCar(command: "B", time: 1)
     }
     
     @IBAction func StopButton(_ sender: Any) {
-        Alamofire.request("http://" + ipAddress + "/" + "output.cgi?text=.1212S1&submit=Submit")
+        requestCar(command: "S", time: 1)
     }
     
     @IBAction func CircleEndButton(_ sender: Any) {
-        Alamofire.request("http://" + ipAddress + "/" + "output.cgi?text=.1212C1&submit=Submit")
+        requestCar(command: "C", time: 1)
     }
     
     @IBAction func ApproachCircleButton(_ sender: Any) {
-        Alamofire.request("http://" + ipAddress + "/" + "output.cgi?text=.1212A1&submit=Submit")
+        requestCar(command: "A", time: 1)
 
     }
     
     @IBAction func CircleFailButton(_ sender: Any) {
-        Alamofire.request("http://" + ipAddress + "/" + "output.cgi?text=.1212Z1&submit=Submit")
+        requestCar(command: "Z", time: 1)
     }
 
     @IBAction func SaveIPButton(_ sender: Any) {
@@ -65,6 +65,10 @@ class ViewController: UIViewController {
     
     func dismissKeyboard() {
         view.endEditing(true)
+    }
+    
+    func requestCar(command: Character, time: Int) {
+        Alamofire.request("http://" + ipAddress + "/" + "output.cgi?text=.1212\(command)\(time)&submit=Submit")
     }
 }
 
